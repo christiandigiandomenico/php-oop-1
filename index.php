@@ -31,7 +31,11 @@ require 'db.php'
             <h5 class="card-title">' . $movie->nome . '</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">' . $movie->data . '</h6>
             <h6 class="card-subtitle mb-2 text-body-secondary">' . $movie->director->getFullDirector() . '</h6>
-            <h6 class="card-subtitle mb-2 text-body-secondary">' . $movie->genres . '</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">';
+            foreach ($movie->genres as $genre) {
+                echo $genre . ' ';
+            }
+            echo '</h6>
             <p class="card-text">' . $movie->descrizione . '</p>
         </div>
     </div>';
